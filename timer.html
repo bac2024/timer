@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    #countdown {
+      font-size: 2em;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Countdown to 8:00 AM on June 9th, 2024</h1>
+  <div id="countdown">
+    <span id="months"></span> months
+    <span id="days"></span> days
+    <span id="hours"></span> hours
+    <span id="minutes"></span> minutes
+    <span id="seconds"></span> seconds
+  </div>
+
+  <script>
+    var countdownDate = new Date("June 9, 2024 08:00:00").getTime();
+
+    var countdownFunction = setInterval(function () {
+      var now = new Date().getTime();
+      var distance = countdownDate - now;
+
+      var months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
+      var days = Math.floor((distance % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("months").innerHTML = months;
+      document.getElementById("days").innerHTML = days;
+      document.getElementById("hours").innerHTML = hours;
+      document.getElementById("minutes").innerHTML = minutes;
+      document.getElementById("seconds").innerHTML = seconds;
+
+      if (distance < 0) {
+        clearInterval(countdownFunction);
+        document.getElementById("countdown").innerHTML = "The time has come!";
+      }
+    }, 1000);
+  </script>
+</body>
+
+</html>
