@@ -15,13 +15,13 @@
 </head>
 
 <body>
-  <h1>Countdown to 8:00 AM on June 9th, 2024</h1>
+  <h1>الوقت المتبقي للباك 2024</h1>
   <div id="countdown">
-    <span id="months"></span> months
-    <span id="days"></span> days
-    <span id="hours"></span> hours
-    <span id="minutes"></span> minutes
-    <span id="seconds"></span> seconds
+    <span id="اشهر"></span> months
+    <span id="ايام"></span> days
+    <span id="ساعات"></span> hours
+    <span id="دقائق"></span> minutes
+    <span id="ثواني"></span> seconds
   </div>
 
   <script>
@@ -37,15 +37,15 @@
       var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      document.getElementById("months").innerHTML = months;
-      document.getElementById("days").innerHTML = days;
-      document.getElementById("hours").innerHTML = hours;
-      document.getElementById("minutes").innerHTML = minutes;
-      document.getElementById("seconds").innerHTML = seconds;
+      document.getElementById("اشهر").innerHTML = months;
+      document.getElementById("ايام").innerHTML = days;
+      document.getElementById("ساعات").innerHTML = hours;
+      document.getElementById("دقائق").innerHTML = minutes;
+      document.getElementById("ثواني").innerHTML = seconds;
 
       if (distance < 0) {
         clearInterval(countdownFunction);
-        document.getElementById("countdown").innerHTML = "The time has come!";
+        document.getElementById("countdown").innerHTML = "روح تقرى الباك روح";
       }
     }, 1000);
   </script>
