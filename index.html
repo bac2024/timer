@@ -93,41 +93,45 @@
       width: 100%;
     }
 
-    @media (max-width: 768px) {
+  @media (max-width: 768px) {
   .countdown {
-    font-size: 1.6em; /* Increase font size */
-    gap: 15px; /* Adjust gap between countdown elements */
+    font-size: 1.8em; /* Increase font size */
+    gap: 20px; /* Adjust gap between countdown elements */
   }
 
   .countdown span {
-    padding: 12px 24px; /* Increase padding */
+    padding: 14px 28px; /* Increase padding */
   }
 
   .social-icons {
-    bottom: 25px; /* Adjust position */
+    bottom: 35px; /* Adjust position */
+    margin-top: 10px;
   }
 
   .social-icons a {
-    font-size: 1.8em; /* Resize icons */
-    margin: 0 10px; /* Adjust spacing */
+    font-size: 3.5em !important; /* Resize icons significantly */
+    margin: 0 30px; /* Adjust spacing */
   }
 
-  .author {
-    bottom: 500px; /* Adjust position */
-  }
-  
-  .container {
-    padding: 20px; /* Increase padding */
-  }
-
-  .countdown-container {
-    padding: 60px; /* Increase padding for countdown container */
-  }
-
-  h1 {
-    font-size: 2.5em; /* Increase heading font size */
+  .author a {
+    font-size: 3em !important; /* Increase author text size significantly */
   }
 }
+
+/* For screens between 769px and 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .social-icons a {
+    font-size: 3em !important; /* Resize icons */
+    margin: 0 25px; /* Adjust spacing */
+    margin-top: 10px;
+  }
+
+  .author a {
+    font-size: 2.5em !important; /* Increase author text size */
+    margin-bottom: 30px;
+  }
+}
+
 
 
     
