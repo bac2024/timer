@@ -1,29 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <meta charset="UTF-8">
+  <title>Countdown Timer</title>
+
+<div class="author">
+  <a>This site was made by Ryan Hamdaoui</a>
+</div>
   <style>
     body {
-      text-align: center;
-      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    #countdown {
-      font-size: 2em;
+    .countdown-container {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
     }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 1.5em;
+      color: #555;
+    }
+
+    .countdown span {
+      background-color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .countdown span:nth-child(odd) {
+      background-color: #f5f5f5;
+    }
+    .social-icons {
+      position: absolute;
+      bottom: 20px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin: 0 10px;
+      color: #555;
+      font-size: 1.5em;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #4267B2; /* Change color on hover (Facebook blue) */
+    }
+      .social-icons a:nth-child(1):hover {
+      color: #8a3ab9; /* Instagram purple on hover */
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      position: relative;
+    }
+    .author {
+      position: absolute;
+      bottom: 60px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+  .countdown {
+    font-size: 1.6em; /* Increase font size */
+    gap: 15px; /* Adjust gap between countdown elements */
+  }
+
+  .countdown span {
+    padding: 12px 24px; /* Increase padding */
+  }
+
+  .social-icons {
+    bottom: 25px; /* Adjust position */
+  }
+
+  .social-icons a {
+    font-size: 1.8em; /* Resize icons */
+    margin: 0 10px; /* Adjust spacing */
+  }
+
+  .author {
+    bottom: 500px; /* Adjust position */
+  }
+  
+  .container {
+    padding: 20px; /* Increase padding */
+  }
+
+  .countdown-container {
+    padding: 60px; /* Increase padding for countdown container */
+  }
+
+  h1 {
+    font-size: 2.5em; /* Increase heading font size */
+  }
+}
+
+
+    
   </style>
 </head>
 
 <body>
-  <h1>الوقت المتبقي لإختبار شهادة الباكالوريا سنة 2024</h1>
-  <div id="countdown">
-    <span id="اشهر"></span> Months
-    <span id="ايام"></span> Days
-    <span id="ساعات"></span> Hours
-    <span id="دقائق"></span> Minutes
-    <span id="ثواني"></span> Seconds
+  <div class="container">
+  <div class="countdown-container">
+    <h1>Countdown to BAC Exam 2024</h1>
+    <div class="countdown">
+      <span id="months"></span>
+      <span id="days"></span> 
+      <span id="hours"></span> 
+      <span id="minutes"></span> 
+      <span id="seconds"></span> 
+    </div>
   </div>
-<h1>تم صنع الموقع من طرف ريان حمداوي</h1>
+</div>
+  
+  <!-- Social icons -->
+  <div class="social-icons">
+    <a href="https://www.instagram.com/ryan_hamdaoui/" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com/amine.atna/" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-facebook"></i>
+    </a>
+  </div>
+  
+
 
   <script>
     var countdownDate = new Date("June 9, 2024 08:00:00").getTime();
@@ -38,15 +173,15 @@
       var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      document.getElementById("اشهر").innerHTML = months;
-      document.getElementById("ايام").innerHTML = days;
-      document.getElementById("ساعات").innerHTML = hours;
-      document.getElementById("دقائق").innerHTML = minutes;
-      document.getElementById("ثواني").innerHTML = seconds;
+      document.getElementById("months").innerHTML = months + " Months";
+      document.getElementById("days").innerHTML = days + " Days";
+      document.getElementById("hours").innerHTML = hours + " Hours";
+      document.getElementById("minutes").innerHTML = minutes + " Minutes";
+      document.getElementById("seconds").innerHTML = seconds + " Seconds";
 
       if (distance < 0) {
         clearInterval(countdownFunction);
-        document.getElementById("countdown").innerHTML = "روح تقرى الباك روح";
+        document.getElementById("countdown").innerHTML = "The time has come!";
       }
     }, 1000);
   </script>
